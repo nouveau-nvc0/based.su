@@ -1,70 +1,106 @@
-<!doctype html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="favicon.png">
-  <title>Аркадий Чеха - вебсайт</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.png">
+    <title>Аркадий Чеха - вебсайт</title>
+
+    <style type="text/css">
+        body {
+            max-width: 800px;
+        }
+
+        ul {
+            padding-left: 1em;
+        }
+
+        body {
+            max-width: 50em;
+            font-family: sans-serif;
+        }
+
+        .quote {
+            padding-top: 16px;
+        }
+
+        .quote {
+            padding-top: 1em;
+        }
+    </style>
 </head>
 
 <body>
-  <h1>Аркадий Чеха</h1>
+    <h1>Аркадий Чеха</h1>
 
-  <section>
-    <h2>Ссылки</h2>
-    <ul>
-      <li>
-        <a href="https://github.com/nouveau-nvc0" target="_blank">GitHub</a>
-      </li>
-      <li>
-        <a href="https://vk.com/id560302519" target="_blank">VK</a>
-      </li>
-      <li>
-        <a href="https://t.me/nouveau_nvc0" target=_blank>Telegram</a>
-      </li>
-    </ul>
-  </section>
+    <section>
+        <h2>Ссылки</h2>
+        <ul>
+            <li>
+                <a href="https://github.com/nouveau-nvc0" target="_blank">GitHub</a>
+            </li>
+            <li>
+                <a href="https://t.me/nouveau_nvc0" target="_blank">Telegram</a>
+            </li>
+        </ul>
+    </section>
 
-  <section>
-    <h2>
-      Кто
-    </h2>
-    <p>
-      <span id="years-old"><small>включи жс</small></span>
-      <script>
-        const yearsOld = new Date().getFullYear() - 2003 - (new Date() < new Date(new Date().getFullYear(), 9, 24) ? 1 : 0)
-        const lastDigit = yearsOld.toString().slice(-1)
-        let yearForm = 'лет'
-        if (lastDigit === '1') yearForm = 'год'
-        else if (['2', '3', '4'].contains(lastDigit)) yearForm = 'года'
-        document.getElementById('years-old').textContent = `${yearsOld} ${yearForm}`
-      </script>
-      живу в России, ИТ-разнорабочий. В основном занимаюсь <del>вебнёй и прочей
-        скриптухой</del> вебом, Python, аналитикой на SQL, по большей части факультативно C/C++.
-    </p>
-    <p>
-      Активно пользуюсь моделями OpenAI и жду AGI (хочу отправиться на завод поскорее).
-    </p>
-    <p>
-      Слушаю всё подряд, но в основном экстремальный метал.
-    </p>
-  </section>
+    <section>
+        <h2>Кто</h2>
+        <p>
+            <span id="years-old"><small>включи жс</small></span>
 
-  <section>
-    <h2>
-      Где
-    </h2>
-    <p>
-      На момент последнего обновления работаю и учусь в СТОЛИЦЕ МИРОВОГО КАЗАЧЕСТВА городе Новочеркасске. Часто бываю в
-      Ростове-на-Дону.
-    </p>
-  </section>
+            <script type="text/javascript">
+                (function () {
+                var now = new Date();
+                var yearsOld = now.getFullYear() - 2003;
 
-  <section style="padding-top:1em">
-    <blockquote>«Viam supervadet vadens» <i>(Дорогу осилит идущий)</i></blockquote>
-  </section>
+                // 24 октября (месяцы 0..11, поэтому 9 = октябрь)
+                var birthdayThisYear = new Date(now.getFullYear(), 9, 24);
+                if (now < birthdayThisYear) yearsOld--;
+
+                var lastDigit = yearsOld % 10;
+                var yearForm = 'лет';
+
+                // исключение 11–14
+                var lastTwo = yearsOld % 100;
+                if (lastTwo < 11 || lastTwo > 14) {
+                if (lastDigit == 1) yearForm = 'год';
+                else if (lastDigit >= 2 && lastDigit <= 4) yearForm = 'года';
+                }
+
+                var el = document.getElementById('years-old');
+                if (el) el.innerHTML = yearsOld + ' ' + yearForm;
+                })();
+            </script>
+
+            живу в России, ИТ-разнорабочий. В основном занимаюсь <del>
+                вебнёй и прочей
+                скриптухой
+            </del> вебом, Python, аналитикой на SQL, по большей части факультативно C/C++.
+        </p>
+        <p>
+            Активно пользуюсь моделями OpenAI и жду AGI (хочу отправиться на завод поскорее).
+        </p>
+        <p>
+            Слушаю всё подряд, но в основном экстремальный метал.
+        </p>
+    </section>
+
+    <section>
+        <h2>
+            Где
+        </h2>
+        <p>
+            На момент последнего обновления работаю и учусь в СТОЛИЦЕ МИРОВОГО КАЗАЧЕСТВА городе Новочеркасске. Часто бываю в
+            Ростове-на-Дону.
+        </p>
+    </section>
+
+    <section class="quote">
+        <blockquote>«Viam supervadet vadens» <i>(Дорогу осилит идущий)</i></blockquote>
+    </section>
 </body>
 
 </html>
